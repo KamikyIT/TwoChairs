@@ -66,6 +66,8 @@ public class PlayersObjectsManager : MonoBehaviour
 
             leftPlayerComponent.DropChair(chair);
 
+            chair.OccupantPlayer = null;
+
             chair.GrabberPlayer = null;
         }
 

@@ -262,12 +262,6 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks, IConnectionCallbacks
     {
         if (FindPlayerAndChair(actorNumber, chairId, out var targetPlayer, out var targetChair))
         {
-            //if (targetPlayer.ActorNumber == PhotonNetwork.LocalPlayer.ActorNumber)
-            //{
-            //    var playerComponent = Singleton<PlayersObjectsManager>.Instance.FindPlayerGameObject(targetPlayer);
-
-            //    playerComponent.DropChair(targetChair);
-            //}
 
             var playerComponent = Singleton<PlayersObjectsManager>.Instance.FindPlayerGameObject(targetPlayer);
 

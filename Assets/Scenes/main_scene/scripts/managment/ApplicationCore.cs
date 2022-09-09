@@ -17,6 +17,8 @@ public class ApplicationCore : MonoBehaviour
         Singleton<PlayerProfile>.Instance.Initialize();
 
         Singleton<PlayersObjectsManager>.Instance.Initialize();
+
+        Singleton<ChairsObjectsManager>.Instance.Initialize();
    }
     #endregion
 
@@ -55,7 +57,8 @@ public class ApplicationCore : MonoBehaviour
 
     public void PlayerSittedOnChair(PlayerMovement playerMovement, Chair chair)
     {
-        Singleton<UiManager>.Instance.PlayerSittedOnChair(playerMovement, chair);
+        if (playerMovement.PhotonOwner == Photon.Pun.PhotonNetwork.LocalPlayer)
+            Singleton<UiManager>.Instance.PlayerSittedOnChair(playerMovement, chair);
     }
 
     public void ShowChairInfo(Chair chair)
